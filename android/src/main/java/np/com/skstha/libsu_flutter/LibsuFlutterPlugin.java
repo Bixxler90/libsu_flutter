@@ -41,7 +41,7 @@ public class LibsuFlutterPlugin implements FlutterPlugin, Pigeon.LibSuApi, Event
     @Override
     public void configure(@NonNull Boolean mountMaster, @NonNull Long timeoutInSeconds,
                           @NonNull Boolean debug, Pigeon.Result<Void> result) {
-        if (debug) Shell.enableVerboseLogging = BuildConfig.DEBUG;
+        if (debug) Shell.enableVerboseLogging = false;
         final Shell.Builder builder = Shell.Builder.create().setTimeout(timeoutInSeconds);
         if (mountMaster) builder.setFlags(Shell.FLAG_MOUNT_MASTER);
         // Set settings before the main shell can be created
