@@ -20,11 +20,12 @@ rootProject.allprojects {
     }
 }
 
+
 apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
-    namespace 'np.com.skstha.libsu_flutter' // NameSpace für Android 12 und später
+    namespace 'np.com.skstha.libsu_flutter'
 
     defaultConfig {
         minSdkVersion 16
