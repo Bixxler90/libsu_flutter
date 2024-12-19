@@ -23,27 +23,22 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'np.com.skstha.libsu_flutter'
     compileSdkVersion 31
+    namespace 'np.com.skstha.libsu_flutter' // NameSpace für Android 12 und später
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 31
+        buildConfigField "boolean", "DEBUG", "true"
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    defaultConfig {
-        minSdkVersion 16
-
-        buildConfigField "boolean", "DEBUG", "true"
-    }
-
     dependencies {
-        def libsuVersion = '5.0.4'
-        // The core module that provides APIs to a shell
+        def libsuVersion = '5.0.5'
         implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
-    }
-
-    buildFeatures {
-        buildConfig = true 
     }
 }
