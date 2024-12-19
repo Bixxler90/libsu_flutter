@@ -11,9 +11,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:7.2.0'
     }
 }
-    buildFeatures {
-        buildConfig = true 
-    }
+
 rootProject.allprojects {
     repositories {
         google()
@@ -43,5 +41,9 @@ android {
         def libsuVersion = '5.0.4'
         // The core module that provides APIs to a shell
         implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
+    }
+
+    buildFeatures {
+        buildConfig = true 
     }
 }
